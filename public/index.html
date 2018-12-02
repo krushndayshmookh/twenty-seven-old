@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Twenty Seven</title>
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/MaterialIcons.css">
+    <link rel="stylesheet" href="/css/lib/dayshmookh.layout.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+
+
+    <main class="purple lighten-5">
+        <div class="container white">
+            <div id="App" class="z-depth-4">
+
+
+
+
+                <nav class="pink lighten-3">
+                    <div class="nav-wrapper">
+                        <a href="#!" class="center brand-logo">Logo</a>
+                        <a href="#" data-target="mobile-demo" class="show-on-large sidenav-trigger"><i class="material-icons">menu</i></a>
+                    </div>
+                </nav>
+
+                <ul class="sidenav" id="mobile-demo">
+                    <li><a href="#!">Home</a></li>
+                    <li><a href="#!">Contacts</a></li>
+                    <li><a href="#!">Settngs</a></li>
+                    <li><a href="#!">About</a></li>
+                </ul>
+
+
+
+
+
+                <div id="message-container" class="row">
+                    <ul id="messages" class="col s12"></ul>
+                </div>
+
+                <!-- <div class="row"> -->
+                <!-- <form class="col s12" action=""> -->
+                <form action="">
+                    <div class="row">
+                        <div class="input-field col s8 push-s1">
+                            <input id="m" type="text" name="m">
+                            <label for="m">Message</label>
+                        </div>
+                        <div class="col s2 push-s1 center">
+                            <a href="javascript:sendMsg()" class="center btn-floating btn-large pink accent-2"><i class="material-icons right">send</i></a>
+                        </div>
+
+                    </div>
+                </form>
+                <!-- </div> -->
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+    <script src="/js/lib/jquery.min.js"></script>
+    <script src="/js/lib/materialize.min.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+
+
+
+    <script>
+        var socket;
+
+
+
+
+        function sendMsg() {
+            socket.emit('chat message', $('#m').val());
+            $('#m').val('');
+            M.updateTextFields();
+            return false;
+        }
+
+
+        $(function () {
+
+            M.AutoInit();
+
+            socket = io();
+
+
+
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>

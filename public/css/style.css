@@ -1,0 +1,28 @@
+main, main .container {
+  display: flex;
+  flex-direction: column;
+}
+
+main .container, #App {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#message-container {
+  flex: 1 0 auto;
+}
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#messages li {
+  padding: 5px 10px;
+}
+
+#messages li:nth-child(odd) {
+  background: #eee;
+}
