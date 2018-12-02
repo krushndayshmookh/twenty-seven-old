@@ -1,0 +1,16 @@
+{
+  "name": "twenty-seven",
+  "version": "1.0.0",
+  "description": "Lovely communication.",
+  "main": "index.js",
+  "repository": "https://github.com/krushndayshmookh/twenty-seven.git",
+  "author": "krushndayshmookh <krushndayshmookh@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.14",
+    "pug": "^2.0.3",
+    "socket.io": "^2.2.0"
+  }
+}
